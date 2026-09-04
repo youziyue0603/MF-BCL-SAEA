@@ -1,0 +1,54 @@
+manuscript:
+  source: ../大论文/1.0.pdf
+  title: Multi-Fidelity Bayesian Continual Learning Surrogate-Assisted Evolutionary Algorithm for Inverse Design of 4D-Printed Liquid Crystal Elastomer Fiber Actuators
+
+paper_locked_protocol:
+  design_dimension: 14
+  objective_dimension: 2
+  objective_names: [outer_peak_von_mises_stress, inner_peak_von_mises_stress]
+  fidelity_levels: [L, M, H]
+  solver: Abaqus 2024
+  element: CAX4RT
+  global_element_size_mm: {L: 0.08, M: 0.04, H: 0.02}
+  interface_refinement_size_mm: {L: 0.04, M: 0.02, H: 0.01}
+  population_size: 50
+  maximum_generations: 200
+  high_fidelity_budget: 200
+  high_fidelity_upgrades_per_generation: 5
+  ensemble_members: 5
+  ensemble_hidden_layers: [256, 128, 64]
+  ensemble_dropout: 0.1
+  ensemble_learning_rate: 0.001
+  ensemble_batch_size: 32
+  ensemble_epochs: 50
+  crossover_probability_range: [0.5, 0.9]
+  crossover_distribution_index_range: [5, 30]
+  mutation_probability_range: [0.05, 0.2]
+  mutation_distribution_index_range: [10, 50]
+  controller_hidden_layers: [256, 128, 64]
+  controller_dropout: 0.1
+  random_default_operator_probability: 0.05
+  pseudo_task_count: 4
+  replay_capacity: 100
+  replay_weights: {phase_sensitivity: 0.4, hypervolume_contribution: 0.3, uncertainty: 0.3}
+  ewc_lambda: 1000
+  controller_update_interval_generations: 5
+  controller_recent_high_fidelity_samples: 30
+  gradient_clip_norm: 1.0
+  independent_run_count: 15
+
+paper_reported_values_not_used_as_targets:
+  main_single_run: {HV: 0.8960, IGD_plus: 0.0050, high_fidelity_evaluations: 136, cpu_time_h: 15.93}
+  independent_runs: {HV_mean: 0.8952, HV_sd: 0.0021, IGD_plus_mean: 0.0050, IGD_plus_sd: 0.0006}
+
+not_printed_in_the_manuscript:
+  - original Abaqus input decks, material cards and boundary-condition scripts
+  - exact 14-variable bounds and formal numeric helical-constraint thresholds
+  - medium-fidelity nominal runtime
+  - initialization, candidate-generation and early-stopping details required to obtain 136 HF calls
+  - raw run records, reference Pareto front and baseline implementations
+  - exact residual-calibration network and upgrade-score normalization details
+
+execution_defaults:
+  source: Bundled development configuration
+  instruction: Register the project LCE input files and numerical settings in the execution environment.
