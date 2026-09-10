@@ -1,0 +1,5 @@
+mesh_size_mm,outer_peak_stress_MPa,inner_peak_stress_MPa,pitch_mm,curvature_per_mm,runtime_min,element_count
+0.08,0.592,0.321,2.59,0.77,2.1,2500
+0.04,0.556,0.303,2.54,0.792,7.6,10000
+0.02,0.54,0.29,2.51,0.8,39.4,40000
+0.0125,0.534,0.286,2.5,0.803,104.8,86000

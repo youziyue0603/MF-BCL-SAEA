@@ -15,6 +15,7 @@ Code for multi-fidelity Bayesian continual-learning inverse design of LCE fiber 
 - `configs/paper_contract.yaml`: manuscript parameters.
 - `examples/run_fast_reconstruction.py`: quick run example.
 - `scripts/audit_conformance.py`: parameter audit.
+- `plotting/`: fixed figure data and final plotting code.
 - `tests/`: unit tests.
 
 ## Run
@@ -23,4 +24,11 @@ Code for multi-fidelity Bayesian continual-learning inverse design of LCE fiber 
 python -m pip install -e ".[dev]"
 python -m pytest -q
 python .\examples\run_fast_reconstruction.py
+```
+
+To reproduce the quantitative figures:
+
+```powershell
+python -m pip install -r .\plotting\requirements.txt
+python .\plotting\scripts\plot_all.py
 ```

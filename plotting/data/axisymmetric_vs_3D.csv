@@ -1,0 +1,7 @@
+metric,axisymmetric_2D,full_3D,unit,relative_deviation_pct
+Outer peak stress,0.52,0.54,MPa,3.703703703703707
+Inner peak stress,0.28,0.29,MPa,3.4482758620689493
+Maximum interfacial shear,0.165,0.171,MPa,3.508771929824564
+Helical pitch,2.45,2.51,mm,2.3904382470119367
+Helical curvature,0.82,0.8,mm^-1,2.4999999999999885
+Axial contraction ratio,31.8,32.6,%,2.453987730061352
